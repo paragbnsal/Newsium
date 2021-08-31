@@ -6,15 +6,15 @@ export class NewsItem extends Component {
       let {title , desc , urlToImage , url , author , pubAt} = this.props;
     return (
       <div >
-        <div className="card my-3" style={{width: "20rem"}}>
-            <a href={url} target="_blank" >
+        <div className="card my-2 mx-2" style={{width: "18rem"}}>
+            <a href={url} target="_blank" rel="noreferrer" >
               <img src={urlToImage} className="card-img-top" alt="..."  />
             </a>
           <div className="card-body">
             <p className="card-text">
-                <strong>{title.slice(0,60)}...</strong>
+                <strong>{title}</strong>
                 <br />            
-                {desc.slice(0,100)}...
+                {desc}
                 <br />
             </p>
             <p className="my-0" style = {{fontSize: "85%", fontFamily:"monospace"}}>

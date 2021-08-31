@@ -147,13 +147,26 @@ export class NewsItems extends Component {
               articles: this.articles
           }
       }
+      
+      getPage = async (url)=> {        
+        let data = await fetch(url);
+        let parsedData = await data.json(); 
+        return parsedData;        
+      }
+      async componentDidMount() {
+        let parsedData = await this.getPage ("https://newsapi.org/v2/everything?q=tesla&from=2021-07-31&sortBy=publishedAt&apiKey=27c49801e260406ca6f95f9cc2fc6a44");
+        this.setState({articles: parsedData.articles})  
+        console.log(parsedData);
+        
+      }
+      
   render() {
     return (
       <div className="container my-3">
         <h2>Newsify - What's New Today!!</h2>
         <div className="row">
         {this.state.articles.map((element)=>{            
-          return <div className="col-md-4" key={element.url}>
+          return <div className="col-md-3" key={element.url}>
             <NewsItem title={element.title} desc = {element.description} urlToImage = {element.urlToImage} url = {element.url} author = {element.author} pubAt = {element.publishedAt}/>
           </div>
         })}
