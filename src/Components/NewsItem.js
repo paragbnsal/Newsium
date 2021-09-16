@@ -6,7 +6,7 @@ export class NewsItem extends Component {
       let {title , desc , urlToImage , url , author , pubAt} = this.props;
     return (
       <div >
-        <div className="card my-2 mx-2" style={{width: "18rem"}}>
+        <div className="card my-2 mx-2" >
             <a href={url} target="_blank" rel="noreferrer" >
               <img src={urlToImage} className="card-img-top" alt="..."  />
             </a>
@@ -18,7 +18,7 @@ export class NewsItem extends Component {
                 <br />
             </p>
             <p className="my-0" style = {{fontSize: "85%", fontFamily:"monospace"}}>
-                {pubAt} by {author}
+                {new Date(pubAt).toGMTString()} by {!author?"Unknown":author}
             </p>
           </div>
         </div>
