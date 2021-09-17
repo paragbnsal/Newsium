@@ -12,10 +12,7 @@ export class Navbar extends Component {
                         <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                            <Link className="nav-link " aria-current="page" to="/" >Home</Link>
-                            </li>
+                        <ul className="navbar-nav">                            
                             <li className="nav-item">
                             <Link className="nav-link " aria-current="page" to="/" >About</Link>
                             </li>
@@ -23,14 +20,13 @@ export class Navbar extends Component {
                             <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categories
                             </Link>
-                            <ul className="dropdown-menu " aria-labelledby="navbarDropdown" >
-                                <li><Link className="dropdown-item" to="/business">Business</Link></li>
-                                <li><Link className="dropdown-item" to="/entertainment">Entertainment</Link></li>
-                                <li><Link className="dropdown-item" to="/finance">Finance</Link></li>
-                                <li><Link className="dropdown-item" to="/health">Health</Link></li>
-                                <li><Link className="dropdown-item" to="/science">Science</Link></li>
-                                <li><Link className="dropdown-item" to="/sports">Sports</Link></li>
-                                <li><Link className="dropdown-item" to="/technology">Technology</Link></li>
+                            <ul className="dropdown-menu bg-dark" aria-labelledby="navbarDropdown" >
+                                <li><Link className="dropdown-item text-light" to="/business">Business</Link></li>
+                                <li><Link className="dropdown-item text-light" to="/entertainment">Entertainment</Link></li>
+                                <li><Link className="dropdown-item text-light" to="/health">Health</Link></li>
+                                <li><Link className="dropdown-item text-light" to="/science">Science</Link></li>
+                                <li><Link className="dropdown-item text-light" to="/sports">Sports</Link></li>
+                                <li><Link className="dropdown-item text-light" to="/technology">Technology</Link></li>
                                 </ul>
                             </li>        
                             <li className="nav-item">
