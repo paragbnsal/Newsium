@@ -35,11 +35,11 @@ export class NewsItems extends Component {
   };
 
   async componentDidMount() {
-    this.props.setProgress(0)
+    this.props.setProgress(50)
     let parsedData = await this.getPage(
       `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=72706429eb454b3abe9ed3d232159297&page=${this.state.page}&pageSize=${this.props.pageSize}`
       );
-      this.props.setProgress(75)
+      this.props.setProgress(80)
       this.setState({
         articles: parsedData.articles,
         loading: false,
@@ -64,7 +64,7 @@ export class NewsItems extends Component {
     return (
       <>
         <div className="container my-3">
-          <h2>Newsify - What's New Today!!</h2>
+          <h2 style={{marginTop: "75px"}}>Newsify - What's New Today!!</h2>
           {this.state.loading && <Spinner />}
         </div>
         <InfiniteScroll
